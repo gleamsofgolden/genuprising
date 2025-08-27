@@ -112,7 +112,7 @@ const AboutPage = () => {
 
         {/* Team Section */}
         <section className="py-16 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -123,25 +123,25 @@ const AboutPage = () => {
               <h2 className="text-4xl font-bold serif text-[var(--navy)] mb-4">Meet the Founder</h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex justify-center">
               {founders.map((founder, index) => (
                 <motion.div
                   key={founder.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white p-8 rounded-lg shadow-lg text-center"
+                  className="bg-white max-w-3xl w-full p-10 rounded-2xl shadow-xl text-center"
                 >
-                  <div className="mb-6">
+                  <div className="mb-8">
                     <img
-                      className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-[var(--red)]"
+                      className="w-40 h-40 rounded-full mx-auto object-cover border-4 border-[var(--red)]"
                       alt={`Portrait of ${founder.name}`}
                       src={founder.image}
                     />
                   </div>
-                  <h3 className="text-xl font-bold serif text-[var(--navy)] mb-2">{founder.name}</h3>
-                  <p className="text-[var(--red)] font-medium mb-4">{founder.role}</p>
-                  <p className="text-[var(--text-muted)] leading-relaxed">{founder.bio}</p>
+                  <h3 className="text-2xl font-bold serif text-[var(--navy)] mb-3">{founder.name}</h3>
+                  <p className="text-[var(--red)] font-medium mb-6">{founder.role}</p>
+                  <p className="text-lg text-[var(--text-muted)] leading-relaxed">{founder.bio}</p>
                 </motion.div>
               ))}
             </div>
